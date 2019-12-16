@@ -8,27 +8,15 @@
 	<title>Document</title>
 </head>
 <body>
-<!--Данные должны быть где то в таком виде http://localhost:3000/?uri=asdasd&name=ssss-->
 <?php
-if (isset($_GET['uri'])):
-$uri = $_GET['uri'];
-else:
-echo 'Введите данные URI' .'<br>';
-endif;
+$ip = $_SERVER['REMOTE_ADDR'];
 
-if (isset($_GET['name'])):
-	$name = $_GET['name'];
-else:
-echo 'Введите данные NAME' .'<br>';
-endif;
-
-if (isset($uri) && isset($name)):
-echo 'Ваша ссылка: ';
-echo "<a href='http://lessons.osp/{$uri}'>{$name}</a>";
-else:
-echo 'Данных недостаточно для формирования ссылки';
-endif;
+if (isset($ip)){
+	echo 'Ваш IP адрес - '. $ip;
+}
 ?>
+<p>Более подробную инфомацию о вашем IP можно глянуть <a href="https://thehost.ua/domains/whois/<?php echo
+	$ip?>">ТУТ</a></p>
 
 </body>
 </html>

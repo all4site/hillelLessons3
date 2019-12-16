@@ -26,7 +26,7 @@ gulp.task('browser-sync', function () {
         // server: {
         //     baseDir: './'
         // },
-        proxy: 'hillelLessons3',
+        proxy: 'hillelLessons4',
         notify: false
     });
 });
